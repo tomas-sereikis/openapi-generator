@@ -5,4 +5,4 @@
 {{/description}}
     @SerialName(value = "{{{vendorExtensions.x-base-name-literal}}}")
     @Required
-    {{#isInherited}}override {{/isInherited}}{{>modelMutable}} {{{name}}}: {{#isEnum}}{{#isListContainer}}{{#isList}}List{{/isList}}{{^isList}}Array{{/isList}}<{{classname}}.{{{nameInCamelCase}}}>{{/isListContainer}}{{^isListContainer}}{{classname}}.{{{nameInCamelCase}}}{{/isListContainer}}{{/isEnum}}{{^isEnum}}{{{dataType}}}{{/isEnum}}{{#isNullable}}?{{/isNullable}}
+    {{#isInherited}}override {{/isInherited}}{{>modelMutable}} {{{name}}}: {{#isEnum}}{{#isArray}}kotlin.collections.List<{{classname}}.{{{nameInCamelCase}}}>{{/isArray}}{{^isArray}}{{classname}}.{{{nameInCamelCase}}}{{/isArray}}{{/isEnum}}{{^isEnum}}{{{dataType}}}{{/isEnum}}{{#isNullable}}?{{/isNullable}}

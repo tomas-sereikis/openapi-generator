@@ -7,4 +7,4 @@
     {{#deprecated}}
     @Deprecated(message = "This property is deprecated.")
     {{/deprecated}}
-    {{#isInherited}}override {{/isInherited}}{{>modelMutable}} {{{name}}}: {{#isEnum}}{{#isListContainer}}{{#isList}}List{{/isList}}{{^isList}}Array{{/isList}}<{{classname}}.{{{nameInCamelCase}}}>{{/isListContainer}}{{^isListContainer}}{{classname}}.{{{nameInCamelCase}}}{{/isListContainer}}{{/isEnum}}{{^isEnum}}{{{dataType}}}{{/isEnum}}? = {{#defaultvalue}}{{defaultvalue}}{{/defaultvalue}}{{^defaultvalue}}null{{/defaultvalue}}
+    {{#isInherited}}override {{/isInherited}}{{>modelMutable}} {{{name}}}: {{#isEnum}}{{#isArray}}kotlin.collections.List<{{classname}}.{{{nameInCamelCase}}}>{{/isArray}}{{^isArray}}{{classname}}.{{{nameInCamelCase}}}{{/isArray}}{{/isEnum}}{{^isEnum}}{{{dataType}}}{{/isEnum}}? = {{#defaultvalue}}{{defaultvalue}}{{/defaultvalue}}{{^defaultvalue}}null{{/defaultvalue}}

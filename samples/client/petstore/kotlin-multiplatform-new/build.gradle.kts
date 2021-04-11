@@ -1,6 +1,6 @@
 plugins {
-    kotlin("multiplatform") version "1.4.21"
-    kotlin("plugin.serialization") version "1.4.21"
+    kotlin("multiplatform") version "1.4.30"
+    kotlin("plugin.serialization") version "1.4.30"
     id("com.android.application")
     id("kotlin-android-extensions")
 }
@@ -8,10 +8,10 @@ plugins {
 group = "org.openapitools"
 version = "1.0.0"
 
-val ktorVersion = "1.4.1"
+val ktorVersion = "1.5.1"
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 kotlin {
@@ -47,7 +47,6 @@ kotlin {
             kotlin.srcDir("src/common/main")
 
             dependencies {
-                implementation(kotlin("stdlib-common"))
                 api("io.ktor:ktor-client-core:$ktorVersion")
                 api("io.ktor:ktor-client-json:$ktorVersion")
                 api("io.ktor:ktor-client-serialization:$ktorVersion")
@@ -68,7 +67,6 @@ kotlin {
             kotlin.srcDir("src/jvm/main")
 
             dependencies {
-                implementation(kotlin("stdlib-jdk8"))
                 api("io.ktor:ktor-client-core-jvm:$ktorVersion")
             }
         }
@@ -123,7 +121,6 @@ kotlin {
             kotlin.srcDir("src/js/main")
 
             dependencies {
-                implementation(kotlin("stdlib-js"))
                 api("io.ktor:ktor-client-js:$ktorVersion")
             }
         }
@@ -140,7 +137,6 @@ kotlin {
             kotlin.srcDir("src/native/main")
 
             dependencies {
-                implementation(kotlin("stdlib-native"))
                 api("io.ktor:ktor-client-native:$ktorVersion")
             }
         }
